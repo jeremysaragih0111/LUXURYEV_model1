@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id" class="dark-theme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#030614" />
+    <title>Features — LUXURYEV</title>
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/hologram.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <div id="site-header"></div>
+
+    <main id="main" class="container page">
+      <div class="page-head">
+        <p class="eyebrow">Innovation</p>
+        <h1 class="title">Cutting-Edge Technology</h1>
+        <p class="subtitle">Discover the technology that powers our electric vehicles.</p>
+      </div>
+
+      <div id="features-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:24px;"></div>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <section class="glass glass-strong holo-card" style="padding: clamp(32px, 6vw, 64px); text-align:center;">
+        <div class="scanline"></div>
+        <p class="eyebrow">Performance</p>
+        <h2 class="title" style="margin-bottom: 16px;">Numbers That Speak</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:24px; margin-top: 32px;">
+          <div><p style="font-family:var(--font-display); font-size:48px; font-weight:700; color:var(--cyan);">800V</p><p class="text-muted">Charging System</p></div>
+          <div><p style="font-family:var(--font-display); font-size:48px; font-weight:700; color:var(--cyan);">15 min</p><p class="text-muted">To 80% Charge</p></div>
+          <div><p style="font-family:var(--font-display); font-size:48px; font-weight:700; color:var(--cyan);">520 mi</p><p class="text-muted">Max Range</p></div>
+          <div><p style="font-family:var(--font-display); font-size:48px; font-weight:700; color:var(--cyan);">2.8s</p><p class="text-muted">0-60 mph</p></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/core/utils.js"></script>
+    <script src="js/core/navigation.js"></script>
+    <script src="js/core/theme.js"></script>
+    <script src="js/core/particles.js"></script>
+    <script src="js/core/reveal.js"></script>
+    <script src="js/core/hologram.js"></script>
+    <script src="js/core/app.js"></script>
+    <script src="js/pages/features.js"></script>
+  </body>
+</html>
