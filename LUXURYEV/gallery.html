@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id" class="dark-theme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#030614" />
+    <title>Gallery — LUXURYEV</title>
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/hologram.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <style>
+      .lb-caption { color: var(--text); font-family: var(--font-display); font-size: 18px; text-align: center; margin-top: 16px; }
+      .lb-controls { display: flex; gap: 10px; justify-content: center; margin-top: 16px; }
+      #lb-media img { max-width: 100%; max-height: 70vh; border-radius: var(--r-md); box-shadow: 0 30px 80px rgba(0, 229, 255, 0.3); }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <div id="site-header"></div>
+
+    <main id="main" class="container page">
+      <div class="page-head">
+        <p class="eyebrow">Visual Journey</p>
+        <h1 class="title">Experience Gallery</h1>
+        <p class="subtitle">Step closer. Every detail tells a story.</p>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </main>
+
+    <div class="modal" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+      <div class="modal-inner">
+        <button class="modal-close" id="lb-close" aria-label="Close viewer">✕</button>
+        <div id="lb-media"></div>
+        <p class="lb-caption" id="lb-caption"></p>
+        <div class="lb-controls">
+          <button class="btn btn-ghost" id="lb-prev">← Prev</button>
+          <button class="btn btn-ghost" id="lb-next">Next →</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="site-footer"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/core/utils.js"></script>
+    <script src="js/core/navigation.js"></script>
+    <script src="js/core/theme.js"></script>
+    <script src="js/core/particles.js"></script>
+    <script src="js/core/reveal.js"></script>
+    <script src="js/core/hologram.js"></script>
+    <script src="js/core/app.js"></script>
+    <script src="js/pages/gallery.js"></script>
+  </body>
+</html>
