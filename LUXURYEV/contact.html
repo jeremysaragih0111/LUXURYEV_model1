@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id" class="dark-theme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#030614" />
+    <title>Contact — LUXURYEV</title>
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/hologram.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <div id="site-header"></div>
+
+    <main id="main" class="container page">
+      <div class="page-head">
+        <p class="eyebrow">Find Us</p>
+        <h1 class="title">Visit Our Showrooms</h1>
+        <p class="subtitle">Premium spaces, ready to welcome you.</p>
+      </div>
+
+      <div id="dealers-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;"></div>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <div class="glass glass-strong holo-card" style="padding: clamp(32px, 6vw, 56px); max-width: 900px; margin: 0 auto;">
+        <div class="scanline"></div>
+        <div class="text-center" style="margin-bottom: 32px;">
+          <p class="eyebrow">Get in Touch</p>
+          <h2 class="title">Send Us a Message</h2>
+        </div>
+
+        <form id="contact-form" class="form-grid">
+          <div class="form-field">
+            <label for="c-name">Name</label>
+            <input id="c-name" type="text" required placeholder="Your full name" />
+          </div>
+          <div class="form-field">
+            <label for="c-email">Email</label>
+            <input id="c-email" type="email" required placeholder="you@example.com" />
+          </div>
+          <div class="form-field full">
+            <label for="c-subject">Subject</label>
+            <input id="c-subject" type="text" required placeholder="Test drive, financing, etc." />
+          </div>
+          <div class="form-field full">
+            <label for="c-message">Message</label>
+            <textarea id="c-message" required placeholder="Tell us what you're looking for…"></textarea>
+          </div>
+          <div class="full text-center">
+            <button class="btn" type="submit">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="js/config.js"></script>
+    <script src="js/core/utils.js"></script>
+    <script src="js/core/navigation.js"></script>
+    <script src="js/core/theme.js"></script>
+    <script src="js/core/particles.js"></script>
+    <script src="js/core/reveal.js"></script>
+    <script src="js/core/hologram.js"></script>
+    <script src="js/core/app.js"></script>
+    <script src="js/pages/contact.js"></script>
+  </body>
+</html>

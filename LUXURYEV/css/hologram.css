@@ -1,0 +1,241 @@
+.holo-card {
+  position: relative;
+  border-radius: var(--r-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px) saturate(160%);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.25s var(--ease-out), box-shadow 0.35s var(--ease-out);
+  isolation: isolate;
+}
+.holo-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 0%,
+    rgba(0, 229, 255, 0.15) 25%,
+    transparent 50%,
+    rgba(168, 85, 247, 0.15) 75%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: holoShift 6s ease infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes holoShift {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+.holo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(0, 229, 255, 0.03) 0px,
+    rgba(0, 229, 255, 0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 2;
+}
+.holo-card:hover {
+  box-shadow: 0 24px 60px rgba(0, 229, 255, 0.35), 0 0 40px rgba(168, 85, 247, 0.2);
+  border-color: var(--glass-border-strong);
+}
+.holo-card > * { position: relative; z-index: 3; }
+
+.scanline {
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  box-shadow: 0 0 20px var(--cyan);
+  animation: scanMove 3s linear infinite;
+  pointer-events: none;
+  z-index: 4;
+  opacity: 0.6;
+}
+@keyframes scanMove {
+  0% { top: 0; }
+  100% { top: 100%; }
+}
+
+.car-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.car-image-wrap {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.1), rgba(168, 85, 247, 0.1));
+}
+.car-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+.car-card:hover .car-image-wrap img { transform: scale(1.08); }
+
+.car-badge {
+  position: absolute;
+  top: 14px; right: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--cyan);
+  color: #001018;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+}
+.car-badge.accent { background: var(--magenta); color: #fff; }
+.car-badge.green { background: var(--green); color: #001018; }
+
+.car-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+.car-name {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.car-desc { color: var(--text-dim); font-size: 14px; }
+.car-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+}
+.car-stat { text-align: center; }
+.car-stat .label {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.car-stat .value {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--cyan);
+}
+.car-actions { display: flex; gap: 10px; margin-top: auto; }
+.car-actions .btn { flex: 1; padding: 12px 16px; font-size: 12px; }
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  color: var(--cyan);
+  background: rgba(0, 229, 255, 0.1);
+  border: 1px solid var(--glass-border);
+  margin-bottom: var(--s-4);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+  perspective: 1200px;
+}
+.gallery-item {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s var(--ease-out), box-shadow 0.35s;
+}
+.gallery-item img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease-out);
+}
+.gallery-item:hover { box-shadow: 0 24px 60px rgba(0, 229, 255, 0.3); }
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 16px;
+  background: linear-gradient(0deg, rgba(0, 6, 20, 0.95), transparent);
+  color: #fff;
+  font-size: 13px;
+  transform: translateY(100%);
+  transition: transform 0.4s var(--ease-out);
+}
+.gallery-item:hover .gallery-caption { transform: translateY(0); }
+
+.dealer-card { padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+.dealer-icon {
+  width: 48px; height: 48px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  color: var(--cyan);
+  background: rgba(0, 229, 255, 0.12);
+  border: 1px solid var(--glass-border);
+}
+.dealer-name { font-family: var(--font-display); font-size: 20px; font-weight: 600; }
+.dealer-info { display: flex; flex-direction: column; gap: 8px; color: var(--text-dim); font-size: 14px; }
+.dealer-info .row { display: flex; align-items: center; gap: 8px; }
+.dealer-info .row span { color: var(--cyan); }
+
+.form-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+@media (min-width: 720px) {
+  .form-grid { grid-template-columns: 1fr 1fr; }
+  .form-grid .full { grid-column: 1 / -1; }
+}
+.form-field { display: flex; flex-direction: column; gap: 8px; }
+.form-field label {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.form-field input,
+.form-field textarea,
+.form-field select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--glass-border);
+  background: rgba(0, 6, 20, 0.5);
+  color: var(--text);
+  font: inherit;
+  font-size: 14px;
+  transition: border-color var(--dur), box-shadow var(--dur);
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.15);
+}
+.form-field textarea { min-height: 140px; resize: vertical; font-family: inherit; }
