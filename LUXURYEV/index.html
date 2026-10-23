@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id" class="dark-theme">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#030614" />
+    <title>LUXURYEV — The Future of Electric Luxury</title>
+    <meta name="description" content="Premium electric vehicles with holographic showroom experience." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/hologram.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <div id="site-header"></div>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner">
+          <p class="eyebrow">Holographic Showroom</p>
+          <h1 id="hero-title" class="display">The Future of Electric Luxury</h1>
+          <p class="subtitle">
+            Experience unparalleled performance, innovation and sustainability with our
+            premium electric vehicles.
+          </p>
+
+          <div class="three-wrap" aria-hidden="true">
+            <canvas id="three-canvas"></canvas>
+            <div id="three-fallback" hidden>
+              <div class="three-fallback">⚡</div>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn" href="models.html">Explore Models →</a>
+            <a class="btn btn-ghost" href="gallery.html">View Gallery</a>
+          </div>
+
+          <p class="text-muted" style="font-size:12px; letter-spacing:0.2em; text-transform:uppercase;">
+            Holographic · 3D · Interactive
+          </p>
+        </div>
+      </section>
+
+      <section class="container page" aria-labelledby="models-title">
+        <div class="page-head">
+          <p class="eyebrow">Premium Lineup</p>
+          <h2 id="models-title" class="title">Our Electric Collection</h2>
+          <p class="subtitle">Discover cutting-edge electric vehicles designed for performance and sustainability.</p>
+        </div>
+
+        <div id="model-showcase" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:24px;"></div>
+
+        <div class="text-center" style="margin-top: var(--s-7);">
+          <a class="btn" href="models.html">See All Models →</a>
+        </div>
+      </section>
+
+      <section class="container page" aria-labelledby="cta-title">
+        <div class="glass glass-strong holo-card" style="padding: clamp(32px, 6vw, 64px); text-align:center;">
+          <div class="scanline"></div>
+          <p class="eyebrow">Test Drive</p>
+          <h2 id="cta-title" class="title" style="margin-bottom: 16px;">Experience the Future Today</h2>
+          <p class="subtitle" style="margin-bottom: 28px;">Book a test drive and feel the electric difference for yourself.</p>
+          <div class="hero-actions">
+            <a class="btn" href="contact.html">Schedule Test Drive</a>
+            <a class="btn btn-ghost" href="features.html">Learn More</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <!-- CDN Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+
+    <!-- App Scripts (no modules, no imports) -->
+    <script src="js/config.js"></script>
+    <script src="js/core/utils.js"></script>
+    <script src="js/core/navigation.js"></script>
+    <script src="js/core/theme.js"></script>
+    <script src="js/core/particles.js"></script>
+    <script src="js/core/reveal.js"></script>
+    <script src="js/core/hologram.js"></script>
+    <script src="js/core/three-scene.js"></script>
+    <script src="js/core/app.js"></script>
+    <script src="js/pages/home.js"></script>
+  </body>
+</html>
